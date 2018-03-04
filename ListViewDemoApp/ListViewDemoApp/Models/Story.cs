@@ -31,6 +31,9 @@ namespace ListViewDemoApp.Models
 
         [JsonProperty("kids")]
         public List<long> Kids { get; set; }
+
+        [JsonIgnore]
+        public string Description { get; set; }
     }
 
 }

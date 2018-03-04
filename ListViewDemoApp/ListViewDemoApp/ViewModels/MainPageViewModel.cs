@@ -72,7 +72,9 @@ namespace ListViewDemoApp.ViewModels
             var topStoryList = new List<Story>();
             foreach (var getStoryTask in getTop20StoriesTaskList)
             {
-                topStoryList.Add(await getStoryTask.ConfigureAwait(false));
+                Story item = await getStoryTask.ConfigureAwait(false);
+                item.Description = $"{item.Score} points by {item.By}";
+                topStoryList.Add(item);
             }
 
             TopStories = new ObservableRangeCollection<Story>();

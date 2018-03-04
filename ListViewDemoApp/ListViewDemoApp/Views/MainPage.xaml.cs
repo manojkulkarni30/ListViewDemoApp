@@ -58,7 +58,7 @@ namespace ListViewDemoApp.Views
         {
             var story = (Story)e.Item;
             if (story != null)
-                await Navigation.PushAsync(new SecondPage());
+                await Navigation.PushAsync(new SecondPage(story));
         }
 
         #endregion

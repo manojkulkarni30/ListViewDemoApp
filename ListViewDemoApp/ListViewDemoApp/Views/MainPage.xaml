@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:ListViewDemoApp"
              xmlns:control="clr-namespace:ListViewDemoApp.Controls;assembly=ListViewDemoApp"
+             xmlns:androidSpecific="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
              x:Class="ListViewDemoApp.Views.MainPage"
              Title="Hacker News">
     <ContentPage.Content>
@@ -11,20 +12,14 @@
                                 RefreshCommand="{Binding RefreshCommand}"
                                 RowHeight="70" 
                                 HasUnevenRows="True"
+                                androidSpecific:ListView.IsFastScrollEnabled="True"
                                 x:Name="newsListView">
             <control:CustomListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <StackLayout Orientation="Vertical" Padding="20,5,20,5" Spacing="2">
                             <Label Text="{Binding Title}" FontAttributes="Bold"></Label>
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*"></ColumnDefinition>
-                                    <ColumnDefinition Width="*"></ColumnDefinition>
-                                </Grid.ColumnDefinitions>
-                                <Label Text="{Binding Type, StringFormat='Type: {0}'}" FontSize="Small" Grid.Column="0"></Label>
-                                <Label Text="{Binding By, StringFormat='By: {0}'}" FontSize="Small" Grid.Column="1"></Label>
-                            </Grid>
+                            <Label Text="{Binding Description}" FontSize="Small"></Label>
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>
