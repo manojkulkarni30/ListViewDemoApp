@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:ListViewDemoApp.Controls"
+             xmlns:viewCell="clr-namespace:ListViewDemoApp.Templates"
+             x:Class="ListViewDemoApp.Views.ListeViewSample2"
+             Title="List View Sample 2">
+    <ContentPage.Content>
+        
+        <controls:CustomListView
+            IsPullToRefreshEnabled="True"
+            ItemsSource="{Binding Chats}"
+            ItemTappedCommand="{Binding SelectedItemCommand}"
+            HasUnevenRows="true"
+            SeparatorColor="#d5d5d5" >
+            <controls:CustomListView.ItemTemplate>
+                <DataTemplate>
+                    <viewCell:CircleImageWithTextCell></viewCell:CircleImageWithTextCell>
+                </DataTemplate>
+            </controls:CustomListView.ItemTemplate>
+        </controls:CustomListView>
+    </ContentPage.Content>
+</ContentPage>

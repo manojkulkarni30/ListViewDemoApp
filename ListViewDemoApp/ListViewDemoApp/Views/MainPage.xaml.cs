@@ -1,5 +1,4 @@
-﻿using ListViewDemoApp.Models;
-using ListViewDemoApp.ViewModels;
+﻿using ListViewDemoApp.ViewModels;
 using System;
 using System.Diagnostics;
 using Xamarin.Forms;
@@ -20,7 +19,6 @@ namespace ListViewDemoApp.Views
         {
             InitializeComponent();
             BindingContext = mainPageViewModel = new MainPageViewModel();
-            newsListView.ItemTapped += OnItemTapped;
         }
 
         #endregion
@@ -51,14 +49,6 @@ namespace ListViewDemoApp.Views
             newsListView.SaveState();
             mainPageViewModel.TopStories.Clear();
             mainPageViewModel.TopStories = null;
-        }
-
-
-        private async void OnItemTapped(object sender, ItemTappedEventArgs e)
-        {
-            var story = (Story)e.Item;
-            if (story != null)
-                await Navigation.PushAsync(new SecondPage(story));
         }
 
         #endregion

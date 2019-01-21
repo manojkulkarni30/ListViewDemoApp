@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell   xmlns="http://xamarin.com/schemas/2014/forms" 
+        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+        xmlns:controls="clr-namespace:ListViewDemoApp.Controls"
+        x:Class="ListViewDemoApp.Templates.CircleImageWithTextCell">
+    <ViewCell.View>
+        <Grid ColumnSpacing="10"  Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="60" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <controls:CircleImage Grid.Column="0" Source="{Binding Photo}" />
+
+            <StackLayout Grid.Column="1" Spacing="0"  >
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label  Grid.Column="0"
+                                Text="{Binding SentFrom}"
+                                TextColor="Black"
+                                FontAttributes="Bold"
+                                LineBreakMode="TailTruncation" />
+
+                    <Label 
+                                            Grid.Column="1"
+                                            Text="{Binding CreatedAt}"
+                                            TextColor="Gray" />
+                </Grid>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <StackLayout
+                                            Grid.Column="0"
+                                            Spacing="0" >
+                        <Label 
+                                            Text="{Binding Message}"
+                                            TextColor="Gray" >
+                        </Label>
+                    </StackLayout>
+
+                </Grid>
+            </StackLayout>
+        </Grid>
+    </ViewCell.View>
+</ViewCell>

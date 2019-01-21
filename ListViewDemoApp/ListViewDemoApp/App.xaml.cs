@@ -8,7 +8,7 @@ namespace ListViewDemoApp
         public App()
         {
             InitializeComponent();
-            MainPage = new NavigationPage(new MainPage());
+            MainPage = new NavigationPage(new ListeViewSample2());
         }
 
         protected override void OnStart()
